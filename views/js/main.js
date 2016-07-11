@@ -512,7 +512,8 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.getElementsByClassName('mover');
-  for (var i = 0, len = items.length; i < len; i++) {
+  var len = items.length;
+  for (var i = 0; i < len; i++) {
     var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
@@ -534,13 +535,12 @@ window.addEventListener('scroll', updatePositions);
 //Replaced querySelector with getElementById
 //Declaration of movingPizza brought outside the loop to avoid overhead of calling the function each time
 //Variable elem initialised within the for loop declaration to avoid it being created every time the loop runs
-//Calculated the number of rows by dividing the screen height by 100 (height of elem) and ran the for loop for the total number of cells (rows * cols)
+//Ran the for loop 48 times instead of 200
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  var rows = window.screen.height/100;
   var movingPizzas = document.getElementById("movingPizzas1");
-  for (var i = 0, elem; i < (cols * rows); i++) {
+  for (var i = 0, elem; i < 48; i++) {
     elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
