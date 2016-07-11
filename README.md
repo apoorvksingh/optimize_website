@@ -20,7 +20,7 @@
     - In the function changePizzaSizes(size), get variable assignments out of the loop to avoid the overhead of assigning them in each loop run
     - Line : 542 , Declaration of movingPizza brought outside the loop to avoid overhead of calling the function each time
     - Line : 543 , Variable elem initialised within the for loop declaration to avoid it being created every time the loop runs
-    - Line : 541 , Calculated the number of rows by dividing the screen height by 100 (height of elem) and ran the for loop for the total number of cells (rows * cols
+    - Line : 541 , Ran the for loop 48 times instead of 200
 
 ###views/css/styles.css
     - Added Transform and backface-visibility properties to enable harware accelerated CSS
